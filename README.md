@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/github/license/Saluki/Leatherman.svg)](https://github.com/Saluki/Leatherman/blob/master/LICENSE)
 
-Modern and intuitive POS web application written with the Laravel framework.
+Management application for scout groups written with the Laravel framework.
 
 ## Copyright and license
 
