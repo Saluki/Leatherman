@@ -1,5 +1,5 @@
 <?php
 
-Route::get('/', function () {
-    return "Hello World";
-});
+Route::get('/', 'Auth\AuthController@displayForm');
+
+Route::post('/', 'Auth\AuthController@authenticate');
