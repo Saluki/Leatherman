@@ -39,11 +39,11 @@
                             <!-- Tasks: style can be found in dropdown.less -->
                             <li class="dropdown tasks-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-flag-o"></i>
-                                    <span class="label label-danger">9</span>
+                                    <i class="fa fa-bell"></i>
+                                    <span class="label label-warning">3</span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li class="header">You have 9 tasks</li>
+                                    <li class="header">Tu as 3 tâches</li>
                                     <li>
                                         <!-- inner menu: contains the actual data -->
                                         <ul class="menu">
@@ -63,42 +63,30 @@
                                         </ul>
                                     </li>
                                     <li class="footer">
-                                        <a href="#">View all tasks</a>
+                                        <a href="#">Voir toutes les tâches</a>
                                     </li>
                                 </ul>
                             </li>
-                            <!-- User Account: style can be found in dropdown.less -->
                             <li class="dropdown user user-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                                    <span class="hidden-xs">John Doe</span>
+                                    <img src="{{ url('build/img/default_user.png') }}" class="user-image" alt="User Image">
+                                    <span class="hidden-xs">{{ Auth::user()->name }}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- User image -->
                                     <li class="user-header">
-                                        <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="Image">
+                                        <img src="{{ url('build/img/default_user.png') }}" class="img-circle" alt="User Image">
                                         <p>
                                             {{ Auth::user()->name }}
                                             <small>Inscrit depuis {{ Auth::user()->created_at }}</small>
                                         </p>
                                     </li>
                                     <!-- Menu Body -->
-                                    <li class="user-body">
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Followers</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Sales</a>
-                                        </div>
-                                        <div class="col-xs-4 text-center">
-                                            <a href="#">Friends</a>
-                                        </div>
-                                    </li>
                                     <!-- Menu Footer-->
                                     <li class="user-footer">
-                                        <div class="pull-left">
+                                       <!-- <div class="pull-left">
                                             <a href="#" class="btn btn-default btn-flat">Préférences</a>
-                                        </div>
+                                        </div>-->
                                         <div class="pull-right">
                                             <a href="{{ url('app/logout') }}" class="btn btn-default btn-flat">Deconnection</a>
                                         </div>
