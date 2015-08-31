@@ -16,11 +16,51 @@
     <section class="content">
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-3">
 
-                <div class="box">
+                <a href="{{ url('app/scouts/ajouter/scout') }}" class="btn btn-primary btn-block margin-bottom">Ajouter</a>
+
+                <div class="box box-solid">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Listing</h3>
+                        <h3 class="box-title">Filtrer</h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-body no-padding">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li
+                            @if( $filter==0 )
+                                class="active"
+                            @endif><a href="{{ url('app/scouts') }}">Aucun filtre</a></li>
+                            <li
+                            @if( $filter==1 )
+                                class="active"
+                            @endif><a href="{{ url('app/scouts/filtre/1') }}">1<sup>ere</sup> années</a></li>
+                            <li
+                            @if( $filter==2 )
+                                class="active"
+                            @endif><a href="{{ url('app/scouts/filtre/2') }}">2<sup>eme</sup> années</a></li>
+                            <li
+                            @if( $filter==3 )
+                                class="active"
+                            @endif><a href="{{ url('app/scouts/filtre/3') }}">3<sup>eme</sup> années</a></li>
+                            <li
+                            @if( $filter==4 )
+                                class="active"
+                            @endif><a href="{{ url('app/scouts/filtre/4') }}">4<sup>eme</sup> années</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-9">
+
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">
+                            Listing&nbsp;&nbsp;<small>{{ count($scouts) }} scouts</small>
+                        </h3>
                         <div class="box-tools pull-right">
                             <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                         </div>

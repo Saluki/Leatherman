@@ -19,8 +19,8 @@ class ScoutsController extends Controller
     {
         $scouts = $this->scoutRepository->all();
 
-        return view('scouts.main')->with('scouts', $scouts);
-            //->with('annees', $this->countByYear($scouts) );
+        return view('scouts.main')->with('scouts', $scouts)
+            ->with('filter', 0);
     }
 
     public function showScout(Request $request, $id)
@@ -28,14 +28,11 @@ class ScoutsController extends Controller
         return "Showing scout #$id";
     }
 
-    private function countByYear($scouts) {
+    public function filterList(Request $request, $nb)
+    {
+        $scoutsFiltered = $this->scoutRepository->filter($nb);
 
-        $years = [0,0,0,0,0];
-
-        foreach($scouts as $scout) {
-            $years[$scout->annee]++;
-        }
-
-        return $years;
+        return view('scouts.main')->with('scouts', $scoutsFiltered)
+            ->with('filter', $nb);
     }
 }

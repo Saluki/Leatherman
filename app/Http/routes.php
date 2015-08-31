@@ -16,6 +16,8 @@ Route::group(['prefix'=>'app', 'middleware'=>'auth'], function(){
 
     Route::get('scouts/{id}', 'Scouts\ScoutsController@showScout')->where('id', '[0-9]+');
 
+    Route::get('scouts/filtre/{nb}', 'Scouts\ScoutsController@filterList')->where('nb', '[1234]');
+
     Route::get('scouts/ajouter/scout', 'Scouts\RegisterController@showScoutForm');
 
     Route::post('scouts/ajouter/scout', 'Scouts\RegisterController@storeScout');

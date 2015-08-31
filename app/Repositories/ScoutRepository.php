@@ -23,4 +23,16 @@ class ScoutRepository extends Repository
 
         return $allScouts;
     }
+
+    public function filter($nb)
+    {
+        try {
+            $scoutsFiltered = $this->model->where('scout_year', '=', $nb)->orderBy('lastname')->get();
+        }
+        catch(Exception $e) {
+            throw new RepositoryException('Database error');
+        }
+
+        return $scoutsFiltered;
+    }
 }
