@@ -14,6 +14,6 @@ class DashboardController extends Controller
 
     public function showDashboard(Request $request)
     {
-        return "Hello World";
+        return view('dashboard.main');
     }
 }

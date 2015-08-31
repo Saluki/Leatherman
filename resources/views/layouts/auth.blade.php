@@ -25,9 +25,9 @@
         @yield('content')
 
         <!-- JS Dependencies -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="bower_components/icheck/icheck.min.js"></script>
+        <script src="{{ url('bower_components/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ url('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url('bower_components/icheck/icheck.min.js') }}"></script>
 
         <script>
             $(function () {
