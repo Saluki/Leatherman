@@ -32,4 +32,6 @@ Route::group(['prefix'=>'app', 'middleware'=>'auth'], function(){
 
     Route::get('scouts/adresses', 'Scouts\ExportController@exportAddresses');
 
+    Route::get('logout', 'Auth\AuthController@logout');
+
 });
