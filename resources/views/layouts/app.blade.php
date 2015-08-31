@@ -40,15 +40,15 @@
                             <li class="dropdown tasks-menu">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <i class="fa fa-bell"></i>
-                                    <span class="label label-warning">3</span>
+                                    <!--<span class="label label-warning">3</span>-->
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li class="header">Tu as 3 tâches</li>
+                                    <li class="header">Aucune tâche pour l'instant</li>
                                     <li>
                                         <!-- inner menu: contains the actual data -->
                                         <ul class="menu">
                                             <li><!-- Task item -->
-                                                <a href="#">
+                                                <!--<a href="#">
                                                     <h3>
                                                         Design some buttons
                                                         <small class="pull-right">20%</small>
@@ -58,7 +58,7 @@
                                                             <span class="sr-only">20% Complete</span>
                                                         </div>
                                                     </div>
-                                                </a>
+                                                </a>-->
                                             </li><!-- end task item -->
                                         </ul>
                                     </li>
@@ -119,22 +119,22 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('app') }}">
+                            <a href="{{ url('app/scouts') }}">
                                 <i class="fa fa-users"></i> <span>Scouts</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('app') }}">
+                            <a href="{{ url('app/calendrier') }}">
                                 <i class="fa fa-calendar"></i> <span>Calendrier</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('app') }}">
+                            <a href="{{ url('app/documents') }}">
                                 <i class="fa fa-book"></i> <span>Documents</span>
                             </a>
                         </li>
                         <li>
-                            <a href="{{ url('app') }}">
+                            <a href="{{ url('app/finances') }}">
                                 <i class="fa fa-bank"></i> <span>Finances</span>
                             </a>
                         </li>

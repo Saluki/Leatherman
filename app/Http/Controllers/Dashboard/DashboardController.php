@@ -3,17 +3,22 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\ScoutRepository;
 use Request;
 
 class DashboardController extends Controller
 {
-    public function __construct()
-    {
+    protected $scoutRepository;
 
+    public function __construct(ScoutRepository $scoutRepository)
+    {
+        $this->scoutRepository = $scoutRepository;
     }
 
     public function showDashboard(Request $request)
     {
-        return view('dashboard.main');
+        $scoutsNumber = count($this->scoutRepository->all());
+
+        return view('dashboard.main')->with('scoutsNumber', $scoutsNumber);
     }
 }

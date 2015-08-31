@@ -12,6 +12,22 @@ Route::group(['prefix'=>'app', 'middleware'=>'auth'], function(){
 
     Route::get('/', 'Dashboard\DashboardController@showDashboard');
 
-    Route::get('logout', 'Auth\AuthController@logout');
+    Route::get('scouts', 'Scouts\ScoutsController@showAll');
+
+    Route::get('scouts/{id}', 'Scouts\ScoutsController@showScout')->where('id', '[0-9]+');
+
+    Route::get('scouts/ajouter/scout', 'Scouts\RegisterController@showScoutForm');
+
+    Route::post('scouts/ajouter/scout', 'Scouts\RegisterController@storeScout');
+
+    Route::get('scouts/ajouter/parents', 'Scouts\RegisterController@showParentsForm');
+
+    Route::post('scouts/ajouter/parents', 'Scouts\RegisterController@storeParents');
+
+    Route::get('scouts/rechercher', 'Scouts\SearchController@search');
+
+    Route::get('scouts/export', 'Scouts\ExportController@exportScouts');
+
+    Route::get('scouts/adresses', 'Scouts\ExportController@exportAddresses');
 
 });
