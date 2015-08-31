@@ -26,10 +26,10 @@ class AuthController extends Controller
         ]);
 
         $email = $request->input('email');
-        $hashedPassword = bcrypt($request->input('password'));
+        $hashedPassword = $request->input('password');
 
         if( Auth::attempt(['email'=>$email, 'password'=>$hashedPassword]) ) {
-            return redirect('dashboard');
+            return redirect('app');
         }
 
         return redirect('/')->with('auth-error', 'Les identifiants sont incorrects.')
