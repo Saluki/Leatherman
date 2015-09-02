@@ -25,7 +25,11 @@ class ScoutsController extends Controller
 
     public function showScout(Request $request, $id)
     {
-        return "Showing scout #$id";
+        $scout = $this->scoutRepository->get($id);
+        $parents = $this->scoutRepository->getParents($id);
+
+        return view('scouts.show')->with('scout', $scout)
+            ->with('parents', $parents);
     }
 
     public function filterList(Request $request, $nb)
