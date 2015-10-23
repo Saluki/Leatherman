@@ -2,24 +2,37 @@
 
 namespace App\Http\Controllers\Scouts;
 
+use App\Exceptions\RepositoryException;
 use App\Http\Controllers\Controller;
-use Request;
+use App\Repositories\AddressRepository;
+use App\Repositories\PatrolRepository;
+use App\Repositories\ScoutRepository;
+use Illuminate\Http\Request;
+use DB;
 
 class RegisterController extends Controller
 {
-    public function __construct()
+    public function showScoutForm(Request $request, PatrolRepository $patrolRepository)
     {
-
+        $allPatrols = $patrolRepository->all();
+        return view('scouts.register')->with('patrols', $allPatrols);
     }
 
-    public function showScoutForm(Request $request)
+    public function storeScout(Request $request, AddressRepository $addressRepository, ScoutRepository $scoutRepository)
     {
-        return "Adding scout";
-    }
+        $requestData = $request->all();
 
-    public function storeScout(Request $request)
-    {
-        return "Storing scout";
+        try {
+            $address = $addressRepository->store($requestData);
+            $requestData['address_id'] = $address->address_id;
+
+            $scout = $scoutRepository->store($requestData);
+        }
+        catch(RepositoryException $e) {
+            return "Something went wrong: ".$e->getMessage();
+        }
+
+        return redirect('app/scouts/'.$scout->scout_id);
     }
 
     public function showParentsForm(Request $request)

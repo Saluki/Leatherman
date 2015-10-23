@@ -24,6 +24,30 @@ class ScoutRepository extends Repository
         return $allScouts;
     }
 
+    public function store(array $data)
+    {
+        try {
+            $scout = $this->model->create([
+                'firstname' => $data['firstname'],
+                'lastname' => $data['lastname'],
+                'birthday' => $data['birthday'],
+                'address_id' => $data['address_id'],
+                'email' => $data['email'],
+                'phone' => $data['phone'],
+                'totem' => $data['totem'],
+                'quali' => $data['quali'],
+                'scout_year' => intval($data['scout_year']),
+                'patrol_id' => intval($data['patrol_id']),
+                'did_promise' => isset($data['did_promise']) ? true : false
+            ]);
+        }
+        catch(Exception $e) {
+            throw new RepositoryException('Database error:'. $e->getMessage());
+        }
+
+        return $scout;
+    }
+
     public function filter($nb)
     {
         $this->validateID($nb);

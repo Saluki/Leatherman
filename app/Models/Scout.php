@@ -10,6 +10,9 @@ class Scout extends Model
 
     protected $primaryKey = 'scout_id';
 
+    protected $fillable = ['firstname', 'lastname', 'birthday', 'address_id',
+        'email', 'phone', 'totem', 'quali', 'scout_year', 'patrol_id', 'did_promise'];
+
     public function scopeAddress($query)
     {
         $query->leftJoin('addresses', 'addresses.address_id', '=', 'scouts.address_id');
