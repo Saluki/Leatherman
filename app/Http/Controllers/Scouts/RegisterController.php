@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Scouts;
 use App\Exceptions\RepositoryException;
 use App\Http\Controllers\Controller;
 use App\Repositories\AddressRepository;
+use App\Repositories\ParentRepository;
 use App\Repositories\PatrolRepository;
+use App\Repositories\RelationshipRepository;
 use App\Repositories\ScoutRepository;
 use Illuminate\Http\Request;
 use DB;
@@ -35,13 +37,18 @@ class RegisterController extends Controller
         return redirect('app/scouts/'.$scout->scout_id);
     }
 
-    public function showParentsForm(Request $request)
+    public function storeParents(Request $request, ParentRepository $parentRepository, RelationshipRepository $relationshipRepository)
     {
-        return "Adding scout";
-    }
+        $scoutId = $request->get('scout_id');
 
-    public function storeParents(Request $request)
-    {
-        return "Storing scout";
+        try {
+            $link = $parentRepository->store($request->all());
+            $relationshipRepository->store(['scout_id'=>$scoutId, 'parent_id'=>$link->parent_id]);
+        }
+        catch(RepositoryException $e) {
+            return "Something went wrong: ".$e->getMessage();
+        }
+
+        return redirect('app/scouts/'.$scoutId);
     }
 }

@@ -107,6 +107,66 @@
 
                 @endforeach
 
+                <div class="box box-default collapsed-box">
+
+                    <div class="box-header with-border">
+                        <h3 class="box-title">
+                            <span class="fa fa-link"></span>&nbsp;&nbsp;Ajouter lien
+                        </h3>
+                        <div class="box-tools pull-right">
+                            <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <form class="form-horizontal" method="POST" action="{{ url('app/scouts/ajouter/parents') }}">
+
+                            {!! Form::token() !!}
+
+                            <input type="hidden" name="scout_id" value="{{ $scout->scout_id }}">
+                            <input type="hidden" name="address_id" value="{{ $scout->address_id }}">
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Prénom</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="firstname" class="form-control" placeholder="Prénom" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Nom</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="lastname" class="form-control" placeholder="Nom" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Email</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="email" class="form-control" placeholder="Adresse email" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">Téléphone</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="phone" class="form-control" placeholder="Téléphone" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">GSM</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="mobile" class="form-control" placeholder="GSM" value="">
+                                </div>
+                            </div>
+
+                            <input type="submit" class="btn btn-primary pull-right" value="Enregistrer">
+
+                        </form>
+                    </div>
+
+                </div>
+
             </div>
         </div>
 

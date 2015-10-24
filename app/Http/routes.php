@@ -22,8 +22,6 @@ Route::group(['prefix'=>'app', 'middleware'=>'auth'], function(){
 
     Route::post('scouts/ajouter/scout', 'Scouts\RegisterController@storeScout');
 
-    Route::get('scouts/ajouter/parents', 'Scouts\RegisterController@showParentsForm');
-
     Route::post('scouts/ajouter/parents', 'Scouts\RegisterController@storeParents');
 
     Route::get('scouts/rechercher', 'Scouts\SearchController@search');
