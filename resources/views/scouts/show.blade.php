@@ -27,7 +27,9 @@
                             {{ $scout->firstname }} {{ $scout->lastname }}
                         </h3>
                         <div class="box-tools pull-right">
-                            <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                            <a href="{{ url('app/scouts/'.$scout->scout_id.'/edit') }}" class="btn btn-box-tool">
+                                <span class="fa fa-pencil"></span>
+                            </a>
                         </div>
                     </div>
                     <div class="box-body">
@@ -89,7 +91,10 @@
                                 {{ $parent->firstname }} {{ $parent->lastname }}
                             </h3>
                             <div class="box-tools pull-right">
-                                <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
+                                <!--<button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>-->
+                                <button class="btn btn-box-tool">
+                                    <span class="fa fa-trash"></span>
+                                </button>
                             </div>
                         </div>
                         <div class="box-body">
@@ -98,9 +103,13 @@
                             <a href="mailto:{{ $parent->email }}?subject=[Troupe des Muntjacs] ">{{ $parent->email }}</a>
                             <br><br>
 
-                            <span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;{{ $parent->phone }}
-                            <br>
-                            <span class="glyphicon glyphicon-signal"></span>&nbsp;&nbsp;{{ $parent->mobile }}
+                            @if( !empty($parent->phone) )
+                                <span class="glyphicon glyphicon-earphone"></span>&nbsp;&nbsp;{{ $parent->phone }}
+                                <br>
+                            @endif
+                            @if( !empty($parent->mobile) )
+                                <span class="glyphicon glyphicon-signal"></span>&nbsp;&nbsp;{{ $parent->mobile }}
+                            @endif
 
                         </div>
                     </div>

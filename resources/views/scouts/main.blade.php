@@ -99,9 +99,14 @@
                                             <td>{{ $scout->quali }}</td>
                                             <td>{{ $scout->scout_year }}</td>
                                             <td>
-                                                <a href="{{ url('app/scouts/'.$scout->scout_id) }}" class="btn btn-default btn-xs">
-                                                    <span class="fa fa-eye"></span>&nbsp;&nbsp;Informations
-                                                </a>
+                                                <div class="btn-group">
+                                                    <a href="{{ url('app/scouts/'.$scout->scout_id) }}" class="btn btn-default btn-xs">
+                                                        <span class="fa fa-eye"></span>&nbsp;&nbsp;Fiche
+                                                    </a>
+                                                    <a href="{{ url('app/scouts/'.$scout->scout_id.'/edit') }}" class="btn btn-default btn-xs">
+                                                        <span class="fa fa-pencil"></span>&nbsp;&nbsp;Editer
+                                                    </a>
+                                                </div>
                                             </td>
                                         </tr>
 

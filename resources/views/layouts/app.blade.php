@@ -28,7 +28,7 @@
             <header class="main-header">
 
                 <a href="{{ url('app') }}" class="logo">
-                    <span class="logo-lg"><b>Leatherman</b></span>
+                    <span class="logo-lg"><b>Leatherman v2</b></span>
                 </a>
 
                 <nav class="navbar navbar-static-top" role="navigation">
@@ -124,6 +124,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{ url('app/mailing') }}">
+                                <i class="fa fa-envelope"></i> <span>Mailing</span>
+                            </a>
+                        </li>
+                        <!--<li>
                             <a href="{{ url('app/calendrier') }}">
                                 <i class="fa fa-calendar"></i> <span>Calendrier</span>
                             </a>
@@ -137,7 +142,7 @@
                             <a href="{{ url('app/finances') }}">
                                 <i class="fa fa-bank"></i> <span>Finances</span>
                             </a>
-                        </li>
+                        </li>-->
 
                         <li class="header">TACHES</li>
                         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>A faire</span></a></li>

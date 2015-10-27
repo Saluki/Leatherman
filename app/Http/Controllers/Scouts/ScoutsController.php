@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Scouts;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\PatrolRepository;
 use App\Repositories\ScoutRepository;
 use Request;
 
