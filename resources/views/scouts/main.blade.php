@@ -18,7 +18,10 @@
         <div class="row">
             <div class="col-md-3">
 
-                <a href="{{ url('app/scouts/ajouter/scout') }}" class="btn btn-primary btn-block margin-bottom">Ajouter</a>
+                <div class="btn-group margin-bottom btn-group-justified">
+                    <a href="{{ url('app/scouts/ajouter/scout') }}" class="btn btn-primary">Ajouter</a>
+                    <a href="{{ url('app/scouts/export') }}" class="btn btn-primary">Exporter</a>
+                </div>
 
                 <div class="box box-solid">
                     <div class="box-header with-border">

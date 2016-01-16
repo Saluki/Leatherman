@@ -32,7 +32,7 @@ Route::group(['prefix'=>'app', 'middleware'=>'auth'], function(){
 
     Route::get('scouts/export', 'Scouts\ExportController@exportScouts');
 
-    Route::get('scouts/adresses', 'Scouts\ExportController@exportAddresses');
+    Route::get('patrouilles', 'Patrols\PatrolController@showAll');
 
     Route::get('mailing', 'Mailing\MailingController@showDashboard');
 

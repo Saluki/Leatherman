@@ -36,12 +36,8 @@
 
                         <table class="table">
                             <tr>
-                                <td style="width:50%;border:0px;"><b>Annee</b></td>
-                                <td style="border:0px;"> {{ $scout->scout_year }} </td>
-                            </tr>
-                            <tr>
-                                <td><b>Date de naissance</b></td>
-                                <td> {{ date('d F Y', strtotime($scout->birthday)) }}</td>
+                                <td style="width:50%;border:0px;"><b>Date de naissance</b></td>
+                                <td style="border:0px;"> {{ date('d F Y', strtotime($scout->birthday)) }}</td>
                             </tr>
                             <tr>
                                 <td><b>Email</b></td>
@@ -55,6 +51,15 @@
                                 <td> {{ $scout->phone }} </td>
                             </tr>
                             <tr>
+                                <td style="vertical-align:top;"><b>Adresse</b></td>
+                                <td>
+                                    <a target="_blank" href="https://www.google.be/maps/place/{{ $scout->street.' '.$scout->number.', '.$scout->locality.' '.$scout->zip_code.' '.$scout->country_code }}">
+                                        {{ $scout->number.', '.$scout->street }}<br>
+                                        {{ $scout->locality.' '.$scout->zip_code.' '.$scout->country_code }}
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
                                 <td><b>Totem</b></td>
                                 <td> {{ $scout->totem }} </td>
                             </tr>
@@ -63,17 +68,12 @@
                                 <td> {{ $scout->quali }} </td>
                             </tr>
                             <tr>
-                                <td><b>Patrouille</b></td>
-                                <td> {{ $scout->patrol_name }} </td>
+                                <td><b>Annee</b></td>
+                                <td> {{ $scout->scout_year }} </td>
                             </tr>
                             <tr>
-                                <td style="vertical-align:top;"><b>Adresse</b></td>
-                                <td>
-                                    <a target="_blank" href="https://www.google.be/maps/place/{{ $scout->street.' '.$scout->number.', '.$scout->locality.' '.$scout->zip_code.' '.$scout->country_code }}">
-                                        {{ $scout->number.', '.$scout->street }}<br>
-                                        {{ $scout->locality.' '.$scout->zip_code.' '.$scout->country_code }}
-                                    </a>
-                                </td>
+                                <td><b>Patrouille</b></td>
+                                <td> {{ $scout->patrol_name }} </td>
                             </tr>
                         </table>
 
@@ -91,10 +91,9 @@
                                 {{ $parent->firstname }} {{ $parent->lastname }}
                             </h3>
                             <div class="box-tools pull-right">
-                                <!--<button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>-->
-                                <button class="btn btn-box-tool">
+                                <!--<button class="btn btn-box-tool">
                                     <span class="fa fa-trash"></span>
-                                </button>
+                                </button>-->
                             </div>
                         </div>
                         <div class="box-body">

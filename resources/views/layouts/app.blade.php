@@ -28,7 +28,7 @@
             <header class="main-header">
 
                 <a href="{{ url('app') }}" class="logo">
-                    <span class="logo-lg"><b>Leatherman v2</b></span>
+                    <span class="logo-lg"><b>Leatherman</b></span>
                 </a>
 
                 <nav class="navbar navbar-static-top" role="navigation">
@@ -120,7 +120,12 @@
                         </li>
                         <li>
                             <a href="{{ url('app/scouts') }}">
-                                <i class="fa fa-users"></i> <span>Scouts</span>
+                                <i class="fa fa-user"></i> <span>Scouts</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url('app/patrouilles') }}">
+                                <i class="fa fa-tag"></i> <span>Patrouilles</span>
                             </a>
                         </li>
                         <li>

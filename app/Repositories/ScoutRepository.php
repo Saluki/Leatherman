@@ -24,6 +24,25 @@ class ScoutRepository extends Repository
         return $allScouts;
     }
 
+    public function excelData()
+    {
+        try {
+            $allScouts = $this->model->select('lastname as Nom', 'firstname as Prenom',
+                'totem as Totem', 'quali as Quali',
+                'scout_year as Annee', 'birthday as Naissance',
+                'patrol_name as Patrouille',
+                'email as Email', 'phone as Telephone')
+                ->patrol()
+                ->orderBy('lastname')
+                ->get();
+        }
+        catch(Exception $e) {
+            throw new RepositoryException('Database error: '.$e->getMessage());
+        }
+
+        return $allScouts;
+    }
+
     public function store(array $data)
     {
         try {
