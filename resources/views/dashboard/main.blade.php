@@ -17,45 +17,58 @@
     <section class="content">
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
 
-                <div class="info-box">
-                    <span class="info-box-icon bg-aqua">
-                        <span class="fa fa-users"></span>
-                    </span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">Nombre de scouts</span>
-                        <span class="info-box-number">{{ $scoutsNumber }}</span>
+                <a href="{{ url('app/scouts') }}" class="info-box">
+                    <div class="info-box-icon bg-aqua">
+                        <i class="fa fa-user"></i>
                     </div>
-                </div>
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Scouts
+                        </span>
+                        <span class="info-box-number">
+                            {{ $scoutCount }}
+                        </span>
+                    </div>
+                </a>
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
 
-                <div class="info-box">
-                    <span class="info-box-icon bg-yellow">
-                        <span class="fa fa-bank"></span>
-                    </span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">Etat du compte</span>
-                        <span class="info-box-number">0.00€</span>
+                <a href="{{ url('app/patrouilles') }}" class="info-box">
+                    <div class="info-box-icon bg-red">
+                        <i class="fa fa-tag"></i>
                     </div>
-                </div>
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Patrouilles
+                        </span>
+                        <span class="info-box-number">
+                            {{ $patrolCount }}
+                        </span>
+                    </div>
+                </a>
 
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
 
-                <div class="info-box">
-                    <span class="info-box-icon bg-red">
-                        <span class="fa fa-bell-o"></span>
-                    </span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">Taches en attente</span>
-                        <span class="info-box-number">0</span>
+                <a href="{{ url('app/mailing') }}" class="info-box">
+                    <div class="info-box-icon bg-green">
+                        <i class="fa fa-envelope-o"></i>
                     </div>
-                </div>
+                    <div class="info-box-content">
+                        <span class="info-box-text">
+                            Mailing
+                        </span>
+                        <span class="info-box-number">
+                            {{ $mailingCount }}
+                        </span>
+                    </div>
+                </a>
 
             </div>
+
         </div>
 
     </section>

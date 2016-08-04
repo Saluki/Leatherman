@@ -27,13 +27,15 @@ class ScoutRepository extends Repository
     public function excelData()
     {
         try {
-            $allScouts = $this->model->select('lastname as Nom', 'firstname as Prenom',
+            $allScouts = $this->model->select('scouts.lastname as Nom', 'scouts.firstname as Prenom',
                 'totem as Totem', 'quali as Quali',
-                'scout_year as Annee', 'birthday as Naissance',
+                'scout_year as Annee',
                 'patrol_name as Patrouille',
-                'email as Email', 'phone as Telephone')
+                'parents.email as Email_Contact', 'parents.phone as Telephone_Contact',
+                'parents.mobile as GSM_Contact')
                 ->patrol()
-                ->orderBy('lastname')
+                ->parents()
+                ->orderBy('scouts.lastname')
                 ->get();
         }
         catch(Exception $e) {

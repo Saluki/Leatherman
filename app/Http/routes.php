@@ -36,6 +36,8 @@ Route::group(['prefix'=>'app', 'middleware'=>'auth'], function(){
 
     Route::get('mailing', 'Mailing\MailingController@showDashboard');
 
+    Route::get('map', 'Map\MapController@showMap');
+
     Route::get('logout', 'Auth\AuthController@logout');
 
 });

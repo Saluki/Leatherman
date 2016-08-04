@@ -101,14 +101,14 @@
             <aside class="main-sidebar">
                 <section class="sidebar">
 
-                    <form action="#" method="get" class="sidebar-form">
+                    <!--<form action="#" method="get" class="sidebar-form">
                         <div class="input-group">
                             <input type="text" name="q" class="form-control" placeholder="Rechercher...">
                               <span class="input-group-btn">
                                 <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
                               </span>
                         </div>
-                    </form>
+                    </form>-->
 
                     <ul class="sidebar-menu">
 
@@ -133,21 +133,11 @@
                                 <i class="fa fa-envelope"></i> <span>Mailing</span>
                             </a>
                         </li>
-                        <!--<li>
-                            <a href="{{ url('app/calendrier') }}">
-                                <i class="fa fa-calendar"></i> <span>Calendrier</span>
+                        <li>
+                            <a href="{{ url('app/map') }}">
+                                <i class="fa fa-map-marker"></i> <span>Carte</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="{{ url('app/documents') }}">
-                                <i class="fa fa-book"></i> <span>Documents</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ url('app/finances') }}">
-                                <i class="fa fa-bank"></i> <span>Finances</span>
-                            </a>
-                        </li>-->
 
                         <li class="header">TACHES</li>
                         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>A faire</span></a></li>

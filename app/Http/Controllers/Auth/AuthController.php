@@ -8,12 +8,7 @@ use Auth;
 
 class AuthController extends Controller
 {
-    public function construct()
-    {
-        // Nothing
-    }
-
-    public function displayForm(Request $request)
+    public function displayForm()
     {
         return view('auth.form');
     }
