@@ -8,6 +8,8 @@ use App\Repositories\PatrolRepository;
 use App\Repositories\ScoutRepository;
 use Illuminate\Http\Request;
 
+// Daman was here
+
 class EditController extends Controller
 {
     protected $scoutRepository;
